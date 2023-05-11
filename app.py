@@ -1,5 +1,5 @@
-from Cliente import Cliente
-from ClienteController import ClienteController
+from Model.Cliente import Cliente
+from Controller.ClienteController import ClienteController
 
 control = ClienteController()
 
