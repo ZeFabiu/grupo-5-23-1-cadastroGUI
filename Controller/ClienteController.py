@@ -29,7 +29,7 @@ class ClienteController:
                             if chave_cliente == codigo:
                                 duplicado = True
                         if duplicado == False:
-                            self.__clientes[codigo] = nome
+                            self.adiciona_cliente(codigo, nome)
                             resultado = "Cliente cadastrado!"
                         else:
                             resultado = "Cliente duplicado, insira um código válido!"
@@ -39,16 +39,15 @@ class ClienteController:
                     resultado = "Preencha os dois campos!"
 
             elif event == 'Consultar':
-                
+                nome = values['nome']
                 codigo = values['codigo']
-                if codigo.isdigit():
-                    if codigo in self.__clientes.keys():
-                        resultado = f"Nome: {self.__clientes[codigo]}, Código: {codigo}"
-                    else:
-                        resultado = "Cadastro não encontrado"
-                else:
-                    resultado = "Código deve ser um número inteiro!"
-            
+
+                if nome != '':
+                    resultado = str(self.__clientes[self.busca_nome(nome)])
+                
+                elif codigo != '':
+                    resultado = str(self.busca_codigo(codigo))
+
             if resultado != '':
                 dados = str(resultado)
                 self.__telaCliente.mostra_resultado(dados)

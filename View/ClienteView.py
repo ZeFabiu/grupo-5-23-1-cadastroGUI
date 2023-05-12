@@ -14,8 +14,8 @@ class ClienteView():
     def tela_consulta(self):
         #Tela:
         linha0 = [sg.Text("Digite o código ou o nome do cliente e clique na ação desejada:")]
-        linha1 = [sg.Text("Nome:"), sg.InputText("", key = "nome")]
-        linha2 = [sg.Text("Código:"), sg.InputText("", key = "codigo")]
+        linha1 = [sg.Text("Nome:"), sg.InputText("", key = "nome", do_not_clear= False)]
+        linha2 = [sg.Text("Código:"), sg.InputText("", key = "codigo", do_not_clear= False)]
         linha3 = [sg.Button("Cadastrar"), sg.Button("Consultar")]
         linha4 = [sg.Text('', key = 'resultado')]
 
